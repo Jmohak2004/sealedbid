@@ -1,0 +1,10 @@
+node_modules
+dist
+.env
+.env.*
+!.env.example
+keys/
+*.key
+*.mnemonic
+.DS_Store
+build

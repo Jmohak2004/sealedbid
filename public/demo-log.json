@@ -1,0 +1,279 @@
+{
+ "log": [
+  {
+   "n": 1,
+   "phase": "setup",
+   "lane": "public",
+   "actor": "chain",
+   "tx": "0xd3650a71c4aeed9630d350993e3c195e96423ca9f0d1821aad8c0b0f4b4c7cef",
+   "text": "Auction #1 created for “Q-Day Genesis Licence #1”. Reserve 2 QOR, fixed deposit 1 QOR. Bids are sealed to the seller's ML-KEM-1024 key (hash 0xe730a3c0…b9bff1).",
+   "data": {
+    "auctionId": "1",
+    "rule": "second-price",
+    "deposit": "1"
+   }
+  },
+  {
+   "n": 2,
+   "phase": "setup",
+   "lane": "private",
+   "actor": "Seller",
+   "text": "I published my ML-KEM-1024 key in the on-chain registry. Bidders encrypt to it; only I can read their bids."
+  },
+  {
+   "n": 3,
+   "phase": "commit",
+   "lane": "private",
+   "actor": "Ada",
+   "text": "I want this licence badly and I will not play games. Second-price rule: shading my bid cannot lower what I pay, it only risks losing. I bid my true value, 9 QOR. → I will bid 9 QOR.",
+   "data": {
+    "source": "fallback",
+    "bid": "9"
+   }
+  },
+  {
+   "n": 4,
+   "phase": "commit",
+   "lane": "public",
+   "actor": "0x9E69f9C844cfaCFa24090d84456514be7370f1F2",
+   "tx": "0x0ddc133790f0c95176a8dba1314c95dd6235dc35eafcaf39e316b9a4b937a2cd",
+   "text": "BidCommitted: commitment 0x0788f6b4…ca28aa · ciphertext 11,137 bytes (hash 0xcabd423e…874bfc) · amount: hidden",
+   "data": {
+    "bidder": "0x9E69f9C844cfaCFa24090d84456514be7370f1F2",
+    "commitment": "0x0788f6b43737f6088d4d02f31ca65f3c5a8d5dd2e5bd30625eb83a6856ca28aa",
+    "envelopeHash": "0xcabd423e2a0af7f4b1eee28d85ef094062e2f8c669482c70d57475df15874bfc",
+    "ciphertextBytes": 11137,
+    "preview": "0x5153454c01020201010059da386469b5172de7c548fde94c"
+   }
+  },
+  {
+   "n": 5,
+   "phase": "commit",
+   "lane": "private",
+   "actor": "Bram",
+   "text": "I was tempted to lowball, but a lowball only helps if I am the highest anyway. Second-price rule: shading my bid cannot lower what I pay, it only risks losing. I bid my true value, 7.5 QOR. → I will bid 7.5 QOR.",
+   "data": {
+    "source": "fallback",
+    "bid": "7.5"
+   }
+  },
+  {
+   "n": 6,
+   "phase": "commit",
+   "lane": "public",
+   "actor": "0x93e469DF63775b9689821cf269e786A53e9CbbB4",
+   "tx": "0xe91f31d28a59060087bfc1329e7cac5d2a599a714a8db17525cbbd334f6e2cae",
+   "text": "BidCommitted: commitment 0xd4c037d9…853d5b · ciphertext 11,137 bytes (hash 0xf7692c1e…35e62c) · amount: hidden",
+   "data": {
+    "bidder": "0x93e469DF63775b9689821cf269e786A53e9CbbB4",
+    "commitment": "0xd4c037d98948a306261cff6bae1203c2f4d49374bbe90dc30ca4ba1d07853d5b",
+    "envelopeHash": "0xf7692c1e0bc689089fa14be8cc4cd1ce8f838e63f943008e60d68808b235e62c",
+    "ciphertextBytes": 11137,
+    "preview": "0x5153454c0102020101005a94678f673709dd5b62f94cf611"
+   }
+  },
+  {
+   "n": 7,
+   "phase": "commit",
+   "lane": "private",
+   "actor": "Chidi",
+   "text": "The treasury mandate caps me, and the cap is above my value. Second-price rule: shading my bid cannot lower what I pay, it only risks losing. I bid my true value, 6 QOR. → I will bid 6 QOR.",
+   "data": {
+    "source": "fallback",
+    "bid": "6"
+   }
+  },
+  {
+   "n": 8,
+   "phase": "commit",
+   "lane": "public",
+   "actor": "0xD610c8c8056C9B4157f6C22Dd1999234f6CfE166",
+   "tx": "0x6b5c2c3863dfaa3f897e36b28e17811110c1ffa5f4c6f5b51176ba7482afc262",
+   "text": "BidCommitted: commitment 0x03854b08…fc7ce7 · ciphertext 11,137 bytes (hash 0x51ddcb69…c19af6) · amount: hidden",
+   "data": {
+    "bidder": "0xD610c8c8056C9B4157f6C22Dd1999234f6CfE166",
+    "commitment": "0x03854b0808bd21138614fe8c2a30ea8a1e919d0d71049fe7eac3f47762fc7ce7",
+    "envelopeHash": "0x51ddcb69c0a59bf04466972b61d2a827a3f7ad33ea3078e7f792cc06f6c19af6",
+    "ciphertextBytes": 11137,
+    "preview": "0x5153454c0102020101001987e6d49398e97c5f3d88ba9481"
+   }
+  },
+  {
+   "n": 9,
+   "phase": "commit",
+   "lane": "private",
+   "actor": "Dara",
+   "text": "My value (1.2 QOR) is below the reserve (2 QOR), so I sit this one out. → I skip this auction.",
+   "data": {
+    "source": "fallback",
+    "bid": "0"
+   }
+  },
+  {
+   "n": 10,
+   "phase": "commit",
+   "lane": "attack",
+   "actor": "eavesdropper",
+   "text": "Holds the full 11,137-byte ciphertext of Ada's bid but cannot open it: “the envelope has no entry for this key”. (ML-KEM-1024 resists quantum attackers too.)",
+   "data": {
+    "outcome": "blocked"
+   }
+  },
+  {
+   "n": 11,
+   "phase": "reveal",
+   "lane": "public",
+   "actor": "chain",
+   "text": "Commit phase over. Reveal phase open: anyone may reveal a bid that carries a valid ML-DSA-87 signature by the bidder's registered key."
+  },
+  {
+   "n": 12,
+   "phase": "reveal",
+   "lane": "private",
+   "actor": "Seller",
+   "text": "Decrypted Ada's envelope: 9 QOR, signature checks out locally.",
+   "data": {
+    "bidder": "Ada",
+    "amount": "9"
+   }
+  },
+  {
+   "n": 13,
+   "phase": "reveal",
+   "lane": "public",
+   "actor": "0xB17b3E17be33B25c282388D7a9eA06E6E948b82E",
+   "tx": "0xe4e3a15a8dbffffd5b55a0b8b4fd10073d5a8e126aac190a7ad01c37381f3f0e",
+   "gas": "396625",
+   "text": "BidRevealed: 0x9E69f9… bid 9 QOR. ML-DSA-87 signature verified on-chain (396,625 gas).",
+   "data": {
+    "bidder": "0x9E69f9C844cfaCFa24090d84456514be7370f1F2",
+    "amount": "9",
+    "selfReveal": false
+   }
+  },
+  {
+   "n": 14,
+   "phase": "reveal",
+   "lane": "private",
+   "actor": "Seller",
+   "text": "Decrypted Bram's envelope: 7.5 QOR, signature checks out locally.",
+   "data": {
+    "bidder": "Bram",
+    "amount": "7.5"
+   }
+  },
+  {
+   "n": 15,
+   "phase": "reveal",
+   "lane": "public",
+   "actor": "0xB17b3E17be33B25c282388D7a9eA06E6E948b82E",
+   "tx": "0xa2d160ca3b0870f310b284c79495c89dd07c685dc28a4ed503bb11b92e32af91",
+   "gas": "371894",
+   "text": "BidRevealed: 0x93e469… bid 7.5 QOR. ML-DSA-87 signature verified on-chain (371,894 gas).",
+   "data": {
+    "bidder": "0x93e469DF63775b9689821cf269e786A53e9CbbB4",
+    "amount": "7.5",
+    "selfReveal": false
+   }
+  },
+  {
+   "n": 16,
+   "phase": "reveal",
+   "lane": "public",
+   "actor": "0xD610c8c8056C9B4157f6C22Dd1999234f6CfE166",
+   "tx": "0x077991e1d97f49bb0b5b2103d536a840f91381605a2ec563cd87a3e798fc450d",
+   "gas": "351609",
+   "text": "BidRevealed: 0xD610c8… bid 6 QOR — revealed by the bidder themselves (seller went offline). ML-DSA-87 signature verified on-chain (351,609 gas).",
+   "data": {
+    "bidder": "0xD610c8c8056C9B4157f6C22Dd1999234f6CfE166",
+    "amount": "6",
+    "selfReveal": true
+   }
+  },
+  {
+   "n": 17,
+   "phase": "settle",
+   "lane": "public",
+   "actor": "chain",
+   "tx": "0x193420576abef9e99a067ae0f99c2fd3015d8da1b24b2fb8b8439ab6a09b3a63",
+   "text": "Finalized: Ada (0x9E69f9…) wins and pays the SECOND price, 7.5 QOR — not their own bid.",
+   "data": {
+    "winner": "0x9E69f9C844cfaCFa24090d84456514be7370f1F2",
+    "price": "7.5"
+   }
+  },
+  {
+   "n": 18,
+   "phase": "settle",
+   "lane": "public",
+   "actor": "0x9E69f9C844cfaCFa24090d84456514be7370f1F2",
+   "tx": "0x0c82444ea6af728e395f7a6899f3ff64dd090c1e063c3ef80f9fbc471e256d3c",
+   "text": "WinnerPaid: Ada sends 6.5 QOR on top of the 1 QOR deposit."
+  },
+  {
+   "n": 19,
+   "phase": "withdraw",
+   "lane": "attack",
+   "actor": "thief",
+   "text": "Q-Day: with Bram's recovered ECDSA key the thief calls withdraw() — rejected: “bad ML-DSA signature”. Funds need the ML-DSA-87 signature too.",
+   "data": {
+    "outcome": "blocked",
+    "reason": "bad ML-DSA signature"
+   }
+  },
+  {
+   "n": 20,
+   "phase": "withdraw",
+   "lane": "public",
+   "actor": "0x93e469DF63775b9689821cf269e786A53e9CbbB4",
+   "tx": "0x3734470bcfb5f79a45e37f412b4045398a0f8427b9ebe61e6133243b014f5c47",
+   "gas": "350919",
+   "text": "Withdrawn: Bram receives 1 QOR, authorised by an ML-DSA-87 signature.",
+   "data": {
+    "owed": "1"
+   }
+  },
+  {
+   "n": 21,
+   "phase": "withdraw",
+   "lane": "public",
+   "actor": "0xD610c8c8056C9B4157f6C22Dd1999234f6CfE166",
+   "tx": "0x6891c076d69dd05aab7cb0191058a71dfdb44b88c5cb9c45519492edc714f8f4",
+   "gas": "351051",
+   "text": "Withdrawn: Chidi receives 1 QOR, authorised by an ML-DSA-87 signature.",
+   "data": {
+    "owed": "1"
+   }
+  },
+  {
+   "n": 22,
+   "phase": "withdraw",
+   "lane": "public",
+   "actor": "0xB17b3E17be33B25c282388D7a9eA06E6E948b82E",
+   "tx": "0x681e96609937a6dda21e03c7fd6e2008f275fd8db2ce2a4e9e7a6c9527b5032b",
+   "gas": "343537",
+   "text": "Withdrawn: Seller (seller) receives 7.5 QOR, authorised by an ML-DSA-87 signature.",
+   "data": {
+    "owed": "7.5"
+   }
+  }
+ ],
+ "auctionId": "1",
+ "contract": "0x0404bd7828a6037e55088c0f6300c846f963a499",
+ "chainId": 1337,
+ "winner": "Ada",
+ "price": "7.5",
+ "summary": {
+  "bids": 3,
+  "revealedBySeller": 2,
+  "revealedByBidder": 1,
+  "revealGas": [
+   "396625",
+   "371894",
+   "351609"
+  ]
+ },
+ "mode": "local-mock",
+ "generatedAt": "2026-11-14T14:36:45.315Z",
+ "note": "Recorded on an in-process EVM; ML-DSA verification is mocked there. A testnet recording replaces this once on-chain verification is confirmed."
+}
